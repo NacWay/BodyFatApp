@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BodyFat</string>
+    <string name="EnterName">Введите имя</string>
+    <string name="cotin">Продолжить</string>
+</resources>

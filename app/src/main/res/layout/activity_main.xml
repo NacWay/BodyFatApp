@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/welcometext"
+        android:scaleType="center"
+        android:contentDescription="TODO" />
+
+    <EditText
+        android:id="@+id/enterName"
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="479dp"
+        android:autofillHints="name"
+        android:hint="@string/EnterName"
+        android:textColorHighlight="@color/lightgreen"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:maxLength="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="25sp"
+        android:backgroundTintMode="add"
+        />
+
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="5dp"
+        android:text="@string/cotin" />
+
+</RelativeLayout>
