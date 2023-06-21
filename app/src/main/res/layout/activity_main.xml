@@ -22,20 +22,21 @@
         android:layout_width="284dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="479dp"
         android:autofillHints="name"
-        android:hint="@string/EnterName"
-        android:textColorHighlight="@color/lightgreen"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:layout_centerHorizontal="true"
-        android:maxLength="10"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="25sp"
         android:backgroundTintMode="add"
-        />
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/arsenal_bold_italic"
+        android:hint="@string/EnterName"
+        android:inputType="text"
+        android:maxLength="20"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/lightgreen"
+        android:textColorHint="@color/white"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/buttonContinue"
@@ -45,5 +46,18 @@
         android:layout_centerHorizontal="true"
         android:elevation="5dp"
         android:text="@string/cotin" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonContinue"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/arsenal_bold_italic"
+        android:textColor= "@color/white"
+        android:textSize="30sp"
+        android:text="Имя пользователя"
+        android:textAlignment="center" />
 
 </RelativeLayout>
