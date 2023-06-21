@@ -56,10 +56,11 @@ class MainActivity : AppCompatActivity() {
                     btnContinue.visibility = VISIBLE
                 } else {
                     text.visibility = VISIBLE
-                    Handler(Looper.getMainLooper()).postDelayed(
+                    Handler(Looper.getMainLooper()).postDelayed(        //немного замедляем поток чтобы показать начальную анимацию
                         {
                             startActivity(Intent(applicationContext, activity_2::class.java))
-                            overridePendingTransition(R.anim.diagonal, R.anim.rotate);
+                            overridePendingTransition(R.anim.change_acrivity2, R.anim.change_acrivity1)
+                            finish()  // запрещаем обратный переход к этой активити после перехода ко 2активити
                         },
                         700 // value in milliseconds
                     )
