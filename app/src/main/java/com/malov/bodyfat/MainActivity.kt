@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     Handler(Looper.getMainLooper()).postDelayed(
                         {
                             startActivity(Intent(applicationContext, activity_2::class.java))
-                            overridePendingTransition(R.anim.alpha,R.anim.alpha);
+                            overridePendingTransition(R.anim.diagonal, R.anim.rotate);
                         },
                         700 // value in milliseconds
                     )
