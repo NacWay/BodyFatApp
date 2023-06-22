@@ -28,7 +28,7 @@
         android:autofillHints="name"
         android:backgroundTintMode="add"
         android:focusableInTouchMode="true"
-        android:fontFamily="@font/arsenal_bold_italic"
+        android:fontFamily="@font/noto_sans"
         android:hint="@string/EnterName"
         android:inputType="text"
         android:maxLength="20"
