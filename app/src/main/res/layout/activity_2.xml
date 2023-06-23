@@ -8,8 +8,16 @@
     tools:context=".activity_2">
 
 
+    <FrameLayout
+        android:id="@+id/mainFraim"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+    </FrameLayout>
+
 
     <FrameLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 >
@@ -54,7 +62,7 @@
         android:ellipsize="middle"
         android:minLines="3"
         android:stateListAnimator="@null"
-        android:text="КАЛЬКУЛЯТОР ЧЕГО-ТО ТАМ НОВОГО"
+        android:text="КАЛЬКУЛЯТОР СУТОЧНОГО ПОТРЕБЛЕНИЯ КАЛОРИЙ"
         android:fontFamily="@font/noto_sans"
         android:textAlignment="center"
         android:textColor="@color/lightpurple"

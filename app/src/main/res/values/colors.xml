@@ -10,4 +10,6 @@
     <color name="lightpurple">#e4c1f9</color>
     <color name="lightBlue">#abdaf8</color>
     <color name="lightgreen">#d0eee2</color>
+    <color name="mancolor">#a8def8</color>
+    <color name="womanColor">#f69fcc</color>
 </resources>

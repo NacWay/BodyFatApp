@@ -1,33 +1,16 @@
 package com.malov.bodyfat
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.FrameLayout
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [fatPersent.newInstance] factory method to
- * create an instance of this fragment.
- */
 class fatPersent : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: fatForFemale
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,23 +20,35 @@ class fatPersent : Fragment() {
         return inflater.inflate(R.layout.fragment_fat_persent, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fatPersent.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fatPersent().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val femalebtn : Button = view.findViewById(R.id.femalebtn)
+        val malebtn : Button = view.findViewById(R.id.malebtn)
+        val frame_layout : FrameLayout = view.findViewById(R.id.frame_layout)
+        val fat_forFemale = fatForFemale()
+        val fat_forMale =fatForMale()
+        setFemale(fat_forFemale)
+
+            femalebtn.setOnClickListener{
+                setFemale(fat_forFemale)
             }
+            malebtn.setOnClickListener{
+                setMale(fat_forMale)
+            }
+
+    }
+    fun setFemale(fat_forFemale: fatForFemale) {
+        val fat_forFemale = fatForFemale()
+        childFragmentManager.beginTransaction().apply {
+            replace(R.id.frame_layout, fat_forFemale)
+            commit()
+        }
+    }
+    fun setMale(fat_forMale: fatForMale) {
+        val fat_forMale =fatForMale()
+        childFragmentManager.beginTransaction().apply {
+            replace(R.id.frame_layout, fat_forMale)
+            commit()
+        }
     }
 }

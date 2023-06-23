@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -56,22 +55,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(animation: Animator) {
-                if (prefs.getString("name", "12") == null) {
+                if (prefs.getString("name", "12") == "12") {
                     enterName.visibility = VISIBLE
                     btnContinue.visibility = VISIBLE
                 } else {
                     text.visibility = VISIBLE
-                    Handler(Looper.getMainLooper()).postDelayed(        //немного замедляем поток чтобы показать начальную анимацию
-                        {
-                            startActivity(Intent(applicationContext, activity_2::class.java))
-                            overridePendingTransition(
-                                R.anim.change_acrivity2,
-                                R.anim.change_acrivity1
-                            )
-                            finish()  // запрещаем обратный переход к этой активити после перехода ко 2активити
-                        },
-                        700 // value in milliseconds
-                    )
+                    goSecondActvt()
                 }
             }
 
@@ -97,15 +86,30 @@ class MainActivity : AppCompatActivity() {
                         "Привет ${prefs.getString("name", "12")}",
                         Toast.LENGTH_SHORT
                     ).show()
+                    goSecondActvt()
                 }
             }
         })
         text.setText(prefs.getString("name", "12"))
     }
 
+    fun goSecondActvt(){
+        Handler(Looper.getMainLooper()).postDelayed(        //немного замедляем поток чтобы показать начальную анимацию
+            {
+                startActivity(Intent(applicationContext, activity_2::class.java))
+                overridePendingTransition(
+                    R.anim.change_acrivity2,
+                    R.anim.change_acrivity1
+                )
+                finish()  // запрещаем обратный переход к этой активити после перехода ко 2активити
+            },
+            700 // value in milliseconds
+        )
+    }
+
 
     override fun onPause() {
         super.onPause()
     }
-    
+
 }
