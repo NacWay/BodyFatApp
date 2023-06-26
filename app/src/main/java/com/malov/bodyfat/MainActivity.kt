@@ -18,11 +18,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.malov.bodyfat.DataBase.DataBase
+
 
 
 class MainActivity : AppCompatActivity() {
-    private var dbHelper: DataBase = DataBase(this)
     private lateinit var prefs: SharedPreferences
 
     @SuppressLint("MissingInflatedId", "ResourceType")
@@ -106,10 +105,4 @@ class MainActivity : AppCompatActivity() {
             700 // value in milliseconds
         )
     }
-
-
-    override fun onPause() {
-        super.onPause()
-    }
-
 }
