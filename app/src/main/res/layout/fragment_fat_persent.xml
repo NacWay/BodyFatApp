@@ -21,6 +21,7 @@
         android:layout_marginStart="90dp"
         android:layout_marginTop="30dp"
         android:text="@string/female"
+        android:textColor="@color/white"
         android:backgroundTint="@color/womanColor"/>
 
     <Button
@@ -32,6 +33,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="90dp"
         android:text="@string/male"
+        android:textColor="@color/white"
         android:backgroundTint="@color/mancolor"/>
 
 

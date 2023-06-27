@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fatForMale">
 
+    <TextView
+        android:id="@+id/textHight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:text="Измерьте рост без обуви"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
+    <TextView
+        android:id="@+id/valuetextHight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"
+        android:text="165 кг"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textHight"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/seekHeight"
         android:layout_width="match_parent"
-        android:layout_height="127dp" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:value="165"
+        android:stepSize="1"
+        android:valueFrom="100"
+        android:valueTo="230"
+        app:thumbColor="@color/lightBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valuetextHight" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textWaist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:text="Измерьте объем талии"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekHeight" />
+
+    <TextView
+        android:id="@+id/valuetextWaist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"
+        android:text="45 см"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textWaist"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/seekWaist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:value="90"
+        android:stepSize="1"
+        android:valueFrom="50"
+        android:valueTo="130"
+        app:thumbColor="@color/lightBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valuetextWaist" />
+
+    <TextView
+        android:id="@+id/textNeck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:text="Измерьте обхват шеи"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekWaist" />
+
+    <TextView
+        android:id="@+id/valuetextNeck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"
+        android:text="43 см"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textNeck"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/seekNeck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:value="49"
+        android:stepSize="1"
+        android:valueFrom="20"
+        android:valueTo="80"
+        app:thumbColor="@color/lightBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valuetextNeck" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        android:elevation="20dp"
+        android:text="Рассчитать"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/noticeWaist"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="0dp"
+        android:background="@color/white"
+        android:src="@drawable/noticeimage"
+        app:layout_constraintStart_toEndOf="@+id/textWaist"
+        app:layout_constraintTop_toBottomOf="@+id/seekHeight" />
+
+    <ImageButton
+        android:id="@+id/noticeNeck"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="0dp"
+        android:background="@color/white"
+        android:src="@drawable/noticeimage"
+        app:layout_constraintStart_toEndOf="@+id/textNeck"
+        app:layout_constraintTop_toBottomOf="@+id/seekWaist" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

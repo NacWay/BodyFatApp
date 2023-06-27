@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout">
+
+
+
+    <ImageView
+        android:id="@+id/imageToast"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/waist" />
+
+    <TextView
+        android:id="@+id/textToast"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:fontFamily="@font/arsenal_bold_italic"
+        android:text="В наименее широком месте живота. \nНе втягивайте при этом живот!"
+        />
+</LinearLayout>
