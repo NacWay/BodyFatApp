@@ -29,7 +29,7 @@ class fatForMale : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val inflater = layoutInflater
-        val layout = inflater.inflate(R.layout.toast, view?.findViewById(R.id.linearLayout))
+        val layout = inflater.inflate(R.layout.toast, view?.findViewById(R.id.toastShape))
         val myToast = Toast(view.context)
 
         fun doToast(s: String, waist: Int) {
@@ -75,22 +75,22 @@ class fatForMale : Fragment() {
 
         upDate()
 
-        val result : Double = 86.010 * (Math.log((waist-neck).toDouble()) / Math.log(10.0)) - 97.684*(Math.log(height.toDouble()) / Math.log(10.0)) - 78.387
-
-
         button.setOnClickListener{
             upDate()
-            val result : Double = 495 / (1.0324 - 0.19077 * Math.log10((waist - neck).toDouble()) + 0.15456 * Math.log10(
-                height.toDouble()
-            )) - 450
-            DecimalFormat("#0.00").format(result)
+
+            var result : Double = 495 / (1.0324 - 0.19077 * Math.log10((waist - neck).toDouble()) + 0.15456 * Math.log10(height.toDouble())) - 450
+
             val builder = AlertDialog.Builder(view.context)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.fragment_fat_for_female, null)
+            val dialogLayout = inflater.inflate(R.layout.dialog, view?.findViewById(R.id.dialogShape))
+
+            val categoryFat : String = categoryFat(result)
+            val resStr : String = DecimalFormat("#0.00").format(result)
+            val text : TextView = dialogLayout.findViewById(R.id.resDialog)
+            text.text = "Процент жира: $resStr% \nУ вас: $categoryFat \n"
+
             builder.setCancelable(true)
-                .setTitle("XYI")
-                .setMessage("%твоего вонючего жира = $result \nheigh = $height \n waist = $waist \n neck = $neck Подобные измерения не высчитывают точный процент жира в организме, это только примерные оценки. Проверка гидростатической плотности (гидростатическое взвешивание) — единственный метода, дающий точные результаты.\n" +
-                        "Любой служащий ВМС может рассказать вам об ошибках в результате применения этого метода, поэтому при наличии вопросов вам следует обращаться к врачу.")
+                .setView(dialogLayout)
             builder.show()
         }
 
@@ -101,14 +101,27 @@ class fatForMale : Fragment() {
             override fun onStartTrackingTouch(slider: Slider) {
             }
             override fun onStopTrackingTouch(slider: Slider) {
-                text.text = "${slider.value.toInt()}"
+                text.text = "${slider.value.toInt()} см"
             }
         })
         slider.addOnChangeListener { slider, value, fromUser ->
-            text.text = "${slider.value.toInt()}"
+            text.text = "${slider.value.toInt()} см"
             val vibe: Vibrator = view?.context!!.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibe.vibrate(50)
         }
         return slider.value.toInt()
     }
+
+    private fun categoryFat(result: Double) : String{
+        var string : String = "Ошибка определения"
+        when{
+            result in 2.00..6.00 -> string = "Необходимый жир — это минимум, который нужен для выживания"
+            result in 6.01..14.00 -> string = "Атлетическое телосложение"
+            result in 14.01..18.00 -> string = "Спортивное телосложение"
+            result in 18.01..36.00 -> string = "Обычное телосложение"
+            result >= 36.01 -> string = "Ожирение"
+        }
+        return string
+    }
+
 }

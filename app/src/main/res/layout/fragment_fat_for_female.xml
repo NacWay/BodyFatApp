@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-black"
-        android:text="165 кг"
+        android:text="165 см"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valuetextHight"
-        app:thumbColor="@color/lightBlue" />
+        app:thumbColor="@color/lightgreen" />
 
     <TextView
         android:id="@+id/textWaist"
@@ -81,7 +81,7 @@
         android:stepSize="1"
         android:valueFrom="50"
         android:valueTo="120"
-        app:thumbColor="@color/lightBlue"
+        app:thumbColor="@color/lightgreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valuetextWaist" />
@@ -121,7 +121,7 @@
         android:stepSize="1"
         android:valueFrom="20"
         android:valueTo="80"
-        app:thumbColor="@color/lightBlue"
+        app:thumbColor="@color/lightgreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valuetextNeck" />
@@ -164,7 +164,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valuetextHips"
-        app:thumbColor="@color/lightBlue" />
+        app:thumbColor="@color/lightgreen" />
 
     <Button
         android:id="@+id/button"
@@ -184,8 +184,8 @@
 
     <ImageButton
         android:id="@+id/noticeWaist"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="0dp"
         android:background="@color/white"
         android:src="@drawable/noticeimage"
@@ -194,8 +194,8 @@
 
     <ImageButton
         android:id="@+id/noticeNeck"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="0dp"
         android:background="@color/white"
         android:src="@drawable/noticeimage"
@@ -204,8 +204,8 @@
 
     <ImageButton
         android:id="@+id/noticeHips"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="0dp"
         android:background="@color/white"
         android:src="@drawable/noticeimage"

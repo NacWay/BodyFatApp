@@ -35,7 +35,7 @@ class fatForFemale : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val inflater = layoutInflater
-        val layout = inflater.inflate(R.layout.toast, view?.findViewById(R.id.linearLayout))
+        val layout = inflater.inflate(R.layout.toast, view?.findViewById(R.id.toastShape))
         val myToast = Toast(view.context)
 
         fun doToast(s: String, waist: Int) {
@@ -91,19 +91,22 @@ class fatForFemale : Fragment() {
 
         upDate()
 
-
         button.setOnClickListener{
             upDate()
-            val result : Double = 495 / (1.29579 - 0.35004 * Math.log10((waist + hips - neck).toDouble()) + 0.22100 * Math.log10(
-                height.toDouble()
-            )) - 450
-            DecimalFormat("#0.00").format(result)
+
+            var result : Double = 495 / (1.29579 - 0.35004 * Math.log10((waist + hips - neck).toDouble()) + 0.22100 * Math.log10(height.toDouble())) - 450
+
             val builder = AlertDialog.Builder(view.context)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.fragment_fat_for_female, null)
+            val dialogLayout = inflater.inflate(R.layout.dialog, view?.findViewById(R.id.dialogShape))
+
+            val categoryFat : String = categoryFat(result)
+            val resStr : String = DecimalFormat("#0.00").format(result)
+            val text : TextView = dialogLayout.findViewById(R.id.resDialog)
+            text.text = "Процент жира: $resStr% \nУ вас: $categoryFat \n"
+
             builder.setCancelable(true)
-                .setTitle("XYI")
-                .setMessage("\"%твоего вонючего жира = $result \nheigh = $height \n waist = $waist \n neck = $neck \n hips = $hips")
+                .setView(dialogLayout)
             builder.show()
         }
 
@@ -114,14 +117,26 @@ class fatForFemale : Fragment() {
             override fun onStartTrackingTouch(slider: Slider) {
             }
             override fun onStopTrackingTouch(slider: Slider) {
-                text.text = "${slider.value.toInt()}"
+                text.text = "${slider.value.toInt()} см"
             }
         })
         slider.addOnChangeListener { slider, value, fromUser ->
-            text.text = "${slider.value.toInt()}"
+            text.text = "${slider.value.toInt()} см"
             val vibe: Vibrator = view?.context!!.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibe.vibrate(50)
         }
         return slider.value.toInt()
+    }
+
+    private fun categoryFat(result: Double) : String{
+        var string : String = "Ошибка определения"
+        when{
+            result in 10.00..13.00 -> string = "Необходимый жир — это минимум, который нужен для выживания"
+            result in 13.01..20.00 -> string = "Атлетическое телосложение"
+            result in 20.01..25.00 -> string = "Спортивное телосложение"
+            result in 25.01..32.00 -> string = "Обычное телосложение"
+            result >= 32.01 -> string = "Ожирение"
+        }
+        return string
     }
 }
