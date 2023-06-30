@@ -125,7 +125,8 @@ class cal : Fragment() {
     }
 
     private fun calculate(weight: Int, height: Int, old: Int, groupWork: Int, sex: Int) : ArrayList<Double> {
-        val listOfNutriens = ArrayList<Double>() //list[0] = белки(общ), list[1] = белки растительные в т.ч(белки общ) list[2] = жиры, list[3] = углеводы
+        //list[0] = белки(общ), list[1] = белки растительные в т.ч(белки общ) list[2] = жиры, list[3] = углеводы, list[4] = всего ккал, list[5]= ВОО, list[6] = СДДП
+        val listOfNutriens = ArrayList<Double>()
         val VOO : Double = 655.1+(9.6*weight)+(1.9*height)-(4.7*old)
         val SDDP : Double = VOO*0.1
         when{
