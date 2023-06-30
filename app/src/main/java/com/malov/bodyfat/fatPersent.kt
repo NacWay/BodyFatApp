@@ -33,7 +33,7 @@ class fatPersent : Fragment() {
     }
 
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -71,8 +71,6 @@ class fatPersent : Fragment() {
                 doCloseFragment()
             }
         })
-
-
     }
     fun setFragment(fr: Fragment) {
         childFragmentManager.beginTransaction().apply {

@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.*
 import com.google.android.material.slider.Slider
 import java.text.DecimalFormat
-import kotlin.math.roundToInt
 
 
 class fatForMale : Fragment() {
@@ -22,7 +21,7 @@ class fatForMale : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fan_for_male, container, false)
+        return inflater.inflate(R.layout.fragment_fat_for_male, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,11 +31,11 @@ class fatForMale : Fragment() {
         val layout = inflater.inflate(R.layout.toast, view?.findViewById(R.id.toastShape))
         val myToast = Toast(view.context)
 
-        fun doToast(s: String, waist: Int) {
+        fun doToast(s: String, layoutForToast: Int) {
             val text : TextView = layout.findViewById(R.id.textToast)
             text.text = s
             val image : ImageView = layout.findViewById(R.id.imageToast)
-            image.setImageResource(waist)
+            image.setImageResource(layoutForToast)
             myToast.duration = Toast.LENGTH_LONG
             myToast.setGravity(Gravity.TOP,0,0)
             myToast.view = layout

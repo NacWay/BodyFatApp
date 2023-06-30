@@ -34,7 +34,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/noto_sans"
         android:textSize="10sp"
-        android:text="@string/anatation"
+        android:text="@string/anatationForBodyFat"
         />
 
 </LinearLayout>
