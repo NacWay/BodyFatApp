@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         val welcomeText: ImageView = findViewById(R.id.welcomeText)
         val anim = welcomeText.animate()
-            .translationY(-800F)
+            .translationY(-500F)
             .setDuration(1200)
         anim.start()
 
@@ -72,6 +72,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+
+
         enterName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -96,6 +98,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed(        //немного замедляем поток чтобы показать начальную анимацию
             {
                 startActivity(Intent(applicationContext, activity_2::class.java))
+
                 overridePendingTransition(
                     R.anim.change_acrivity2,
                     R.anim.change_acrivity1

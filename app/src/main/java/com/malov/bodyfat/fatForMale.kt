@@ -81,16 +81,19 @@ class fatForMale : Fragment() {
 
             val builder = AlertDialog.Builder(view.context)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.dialog, view?.findViewById(R.id.dialogShape))
+            val dialogLayout = inflater.inflate(R.layout.dialogfat, view?.findViewById(R.id.dialogShape))
 
             val categoryFat : String = categoryFat(result)
             val resStr : String = DecimalFormat("#0.00").format(result)
             val text : TextView = dialogLayout.findViewById(R.id.resDialog)
+            val img : ImageView = dialogLayout.findViewById(R.id.imageDialog)
+            img.setImageResource(R.drawable.malebodyfat)
             text.text = "Процент жира: $resStr% \nУ вас: $categoryFat \n"
+
 
             builder.setCancelable(true)
                 .setView(dialogLayout)
-            builder.show()
+                .show()
         }
 
     }

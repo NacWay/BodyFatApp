@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialogShape"
+    android:scrollbars="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+
+
+    <TextView
+        android:id="@+id/resDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fontFamily="@font/noto_sans_bold"
+        android:textAlignment="center"
+        android:text="Вам необходимо употреблять в сутки:"
+        android:backgroundTint="@color/lightpurple"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/resDialog"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/lightpurple" />
+
+
+    <ImageView
+        android:id="@+id/imageDialog"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/line"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:elevation="50dp"
+        android:src="@drawable/proteinsicon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="Белки:"
+        android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/proteinCcalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="35dp"
+                android:layout_toEndOf="@+id/imageDialog"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="ккал"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/proteinGramText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="35dp"
+                android:layout_toEndOf="@+id/imageDialog"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="грамм"
+                android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/proteinFitoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="65dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="В том числе растительные"
+        android:textSize="8sp" />
+
+
+            <TextView
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/imageDialog"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/lightpurple" />
+
+            <ImageView
+        android:id="@+id/imageFats"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@+id/line1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:elevation="50dp"
+        android:src="@drawable/fatsimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="Жиры:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/fatsCcalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="ккал"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/fatsGramText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="грамм"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/imageFats"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/lightpurple" />
+
+
+    <ImageView
+        android:id="@+id/imageCarbo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@+id/line2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:elevation="50dp"
+        android:src="@drawable/carbicons" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line2"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="Углеводы:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/carboCcalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line2"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="ккал"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/carboGramText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line2"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="грамм"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/imageCarbo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/lightpurple" />
+
+
+    <ImageView
+        android:id="@+id/imageAllCal"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@+id/line3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:elevation="50dp"
+        android:src="@drawable/caloriesingall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line3"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="Всего:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/allCcalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line3"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="ккал"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/allGramText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line3"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/imageDialog"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="грамм"
+        android:textSize="16sp" />
+            <TextView
+                android:id="@+id/plusSDDP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line3"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="60dp"
+                android:layout_toEndOf="@+id/imageDialog"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="*(+СДДП)"
+                android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/imageCarbo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/lightpurple" />
+    <TextView
+        android:id="@+id/line5"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/imageAllCal"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/lightpurple" />
+
+    <ImageView
+        android:id="@+id/imageFormuls"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/line5"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:elevation="50dp"
+        android:src="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/VOO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line5"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="ВОО:"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/SDDP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line5"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="СДДП:"
+        android:textSize="12sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

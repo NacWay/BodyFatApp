@@ -54,8 +54,8 @@
                 android:text="КАЛЬКУЛЯТОР СУТОЧНОГО ПОТРЕБЛЕНИЯ КАЛОРИЙ"
                 android:textAlignment="center"
                 android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="2sp"
-                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeMinTextSize="6sp"
+                android:autoSizeMaxTextSize="100sp"
                 android:autoSizeStepGranularity="1sp"
                 android:textColor="@color/lightpurple"
                 android:textSize="12sp"
@@ -66,8 +66,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="@color/lightgreen"
-                app:strokeWidth="5sp"
-                tools:targetApi="o" />
+                app:strokeWidth="5sp" />
 
 
             <Button
@@ -83,10 +82,6 @@
                 android:stateListAnimator="@null"
                 android:text="РАССЧИТАТЬ ПРОЦЕНТА ЖИРА В ТЕЛЕ"
                 android:textAlignment="center"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="2sp"
-                android:autoSizeMaxTextSize="14sp"
-                android:autoSizeStepGranularity="1sp"
                 android:textAllCaps="true"
                 android:textColor="@color/lightpurple"
                 android:textSize="12sp"
@@ -149,10 +144,6 @@
                 android:stateListAnimator="@null"
                 android:text="РАССЧИТАТЬ СУТОЧНЫЙ ОБЪЕМА ЖИДКОСТИ"
                 android:textAlignment="center"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="2sp"
-                android:autoSizeMaxTextSize="14sp"
-                android:autoSizeStepGranularity="1sp"
                 android:textColor="@color/lightpurple"
                 android:textSize="12sp"
                 android:translationZ="10dp"

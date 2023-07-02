@@ -260,7 +260,6 @@
                 android:id="@+id/radioBtn1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="I" />
 
@@ -268,7 +267,6 @@
                 android:id="@+id/radioBtn2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="II" />
 
@@ -276,7 +274,6 @@
                 android:id="@+id/radioBtn3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:text="III" />
 
@@ -284,7 +281,6 @@
                 android:id="@+id/radioBtn4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:checked="true"
                 android:text="IV" />
@@ -293,7 +289,6 @@
                 android:id="@+id/radioBtn5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_weight="1"
                 android:checked="true"
                 android:text="V" />

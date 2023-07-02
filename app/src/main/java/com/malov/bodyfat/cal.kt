@@ -27,7 +27,7 @@ class cal : Fragment() {
         return inflater.inflate(R.layout.fragment_cal, container, false)
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -107,20 +107,61 @@ class cal : Fragment() {
             }
         }
         upDate()
+
         button.setOnClickListener{
             upDate()
-            val resSet : ArrayList<Double> = calculate(weight, height, old, groupWork, sex)
             val builder = AlertDialog.Builder(view.context)
-            builder.setMessage(
-                "Белки: ${resSet[0]}грамм/${resSet[0]*4}ккал;\n" +
-                        "В том числе растительные: ${resSet[1]}грамм/${resSet[1]*4}ккал;\n" +
-                        "Жиры: ${resSet[2]}грамм/${resSet[0]*9}ккал;\n" +
-                        "Углеводы: ${resSet[3]}грамм/${resSet[3]*4}ккал;\n" +
-                        "Всего грамм: ${resSet[0]+resSet[2]+resSet[3]}грамм;\n"+
-                        "Всего коллорий: ${resSet[4]}ккал;\n"+
-                        "Расчеты величины основного обмена (ВОО), по формуле Харриса-Бенедикта: ${resSet[5]}ккал\n"+
-                        "СДДП(Специфическое динамическое действие пищи): ${resSet[6]}ккал\n")
+            val dialogLayout = inflater.inflate(R.layout.dialogcal, view?.findViewById(R.id.dialogShape))
+
+            val proteinCcalText : TextView = dialogLayout.findViewById(R.id.proteinCcalText)
+            val proteinGramText : TextView = dialogLayout.findViewById(R.id.proteinGramText)
+            val proteinFitoText : TextView = dialogLayout.findViewById(R.id.proteinFitoText)
+
+            val fatsCcalText : TextView = dialogLayout.findViewById(R.id.fatsCcalText)
+            val fatsGramText : TextView = dialogLayout.findViewById(R.id.fatsGramText)
+
+            val carboCcalText : TextView = dialogLayout.findViewById(R.id.carboCcalText)
+            val carboGramText : TextView = dialogLayout.findViewById(R.id.carboGramText)
+
+            val allCcalText : TextView = dialogLayout.findViewById(R.id.allCcalText)
+            val allGramText : TextView = dialogLayout.findViewById(R.id.allGramText)
+
+            val VOO : TextView = dialogLayout.findViewById(R.id.VOO)
+            val SDDP : TextView = dialogLayout.findViewById(R.id.SDDP)
+
+            val resSet : ArrayList<Double> = calculate(weight, height, old, groupWork, sex)
+            proteinCcalText.text = "${(resSet[0]*4).toInt()} ккал"
+            proteinGramText.text = "${(resSet[0]).toInt()} грамм"
+            proteinFitoText.text = "(В том числе растительные: ${(resSet[1]*4).toInt()} ккал / ${(resSet[1]).toInt()} грамм)"
+
+            fatsCcalText.text = "${(resSet[2]*9).toInt()} ккал"
+            fatsGramText.text = "${(resSet[2]).toInt()} грамм"
+
+            carboCcalText.text = "${(resSet[3]*4).toInt()} ккал"
+            carboGramText.text = "${(resSet[3]).toInt()} грамм"
+
+            allCcalText.text = "${(resSet[4]).toInt()} ккал"
+            allGramText.text = "${(resSet[0]+resSet[2]+resSet[3]).toInt()} грамм"
+
+            VOO.text = "Расчеты величины основного обмена (ВОО), по формуле Харриса-Бенедикта: ${(resSet[5]).toInt()} ккал"
+            SDDP.text = "СДДП(Специфическое динамическое действие пищи): ${(resSet[6]).toInt()} ккал"
+
+            builder
+                .setView(dialogLayout)
                 .show()
+
+            /*
+            proteinCcalText.text = "Белки: ${resSet[0]}грамм/${resSet[0]*4}ккал;\n" +
+                    "В том числе растительные: ${resSet[1]}грамм/${resSet[1]*4}ккал;\n" +
+                    "Жиры: ${resSet[2]}грамм/${resSet[0]*9}ккал;\n" +
+                    "Углеводы: ${resSet[3]}грамм/${resSet[3]*4}ккал;\n" +
+                    "Всего грамм: ${resSet[0]+resSet[2]+resSet[3]}грамм;\n"+
+                    "Всего коллорий: ${resSet[4]}ккал;\n"+
+                    "Расчеты величины основного обмена (ВОО), по формуле Харриса-Бенедикта: ${resSet[5]}ккал\n"+
+                    "СДДП(Специфическое динамическое действие пищи): ${resSet[6]}ккал\n"
+
+             */
+
         }
     }
 

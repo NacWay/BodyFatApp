@@ -98,7 +98,7 @@ class fatForFemale : Fragment() {
 
             val builder = AlertDialog.Builder(view.context)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.dialog, view?.findViewById(R.id.dialogShape))
+            val dialogLayout = inflater.inflate(R.layout.dialogfat, view?.findViewById(R.id.dialogShape))
 
             val categoryFat : String = categoryFat(result)
             val resStr : String = DecimalFormat("#0.00").format(result)

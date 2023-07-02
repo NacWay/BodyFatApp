@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialogShape"
+    android:scrollbars="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    >
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="В этот день Вам необходимо выпить:"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+
+
+    <TextView
+        android:id="@+id/valueAqua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="2300 ml"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+
+    <TextView
+        android:id="@+id/valueAquaCup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/valueAqua"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="Это 20 стаканов воды"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/recAqua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/valueAquaCup"
+        android:layout_marginTop="20dp"
+        android:text="@string/recAqua" />
+
+</RelativeLayout>
