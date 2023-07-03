@@ -31,7 +31,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/mainFraim1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <Button
@@ -100,7 +100,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                />
+                tools:targetApi="o" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -114,7 +114,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ccalbtnact2"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginEnd="20dp"
+                android:contentDescription="TODO" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -128,7 +129,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                />
+                android:contentDescription="TODO" />
 
             <Button
                 android:id="@+id/btn3"
@@ -162,7 +163,8 @@
                 app:layout_constraintStart_toEndOf="@+id/waterimg"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
                 app:strokeColor="@color/lightBlue"
-                app:strokeWidth="5sp" />
+                app:strokeWidth="5sp"
+                tools:targetApi="o" />
 
             <ImageView
                 android:id="@+id/waterimg"
