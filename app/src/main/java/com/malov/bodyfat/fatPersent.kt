@@ -47,17 +47,17 @@ class fatPersent : Fragment() {
         val fat_forFemale = fatForFemale()
         val fat_forMale =fatForMale()
         setFragment(fat_forFemale)
-        imgMale.visibility = GONE
+     //   imgMale.visibility = GONE
 
             femalebtn.setOnClickListener{
                 setFragment(fat_forFemale)
-                imgMale.visibility = GONE
-                imgFemale.visibility = VISIBLE
+        //        imgMale.visibility = GONE
+        //        imgFemale.visibility = VISIBLE
             }
             malebtn.setOnClickListener{
                 setFragment(fat_forMale)
-                imgFemale.visibility = GONE
-                imgMale.visibility = VISIBLE
+           //     imgFemale.visibility = GONE
+           //     imgMale.visibility = VISIBLE
 
             }
 

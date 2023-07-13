@@ -2,11 +2,13 @@ package com.malov.bodyfat
 
 import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Vibrator
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -64,7 +66,8 @@ class activity_2 : AppCompatActivity() {
             addToBackStack(null)
             commit()
             val anim: Animation =
-                AnimationUtils.loadAnimation(this@activity_2, R.anim.openfragment)
+            AnimationUtils.loadAnimation(this@activity_2, R.anim.openfragment)
+            frameLayout.visibility= View.VISIBLE
             frameLayout.startAnimation(anim)
             calcBtn.isEnabled = false
         }
