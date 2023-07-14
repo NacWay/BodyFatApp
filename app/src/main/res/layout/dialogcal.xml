@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
@@ -31,7 +32,11 @@
         android:text="Вам необходимо употреблять в сутки:"
         android:backgroundTint="@color/lightpurple"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
     
     <TextView
         android:id="@+id/line"
@@ -68,7 +73,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="Белки:"
-        android:textSize="20sp" />
+        android:textSize="@dimen/_20ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_20ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
             <TextView
                 android:id="@+id/proteinCcalText"
@@ -80,7 +89,11 @@
                 android:layout_toEndOf="@+id/imageDialog"
                 android:fontFamily="@font/noto_sans_bold"
                 android:text="ккал"
-                android:textSize="16sp" />
+                android:textSize="@dimen/_16ssp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="@dimen/_1ssp"
+                android:autoSizeMaxTextSize="@dimen/_16ssp"
+                android:autoSizeStepGranularity="1sp"/>
 
             <TextView
                 android:id="@+id/proteinGramText"
@@ -92,19 +105,29 @@
                 android:layout_toEndOf="@+id/imageDialog"
                 android:fontFamily="@font/noto_sans_bold"
                 android:text="грамм"
-                android:textSize="16sp" />
+                android:textSize="@dimen/_16ssp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="@dimen/_1ssp"
+                android:autoSizeMaxTextSize="@dimen/_16ssp"
+                android:autoSizeStepGranularity="1sp"/>
 
-    <TextView
-        android:id="@+id/proteinFitoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/line"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="65dp"
-        android:layout_toEndOf="@+id/imageDialog"
-        android:fontFamily="@font/noto_sans_bold"
-        android:text="В том числе растительные"
-        android:textSize="8sp" />
+            <TextView
+                android:id="@+id/proteinFitoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="65dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/imageDialog"
+                android:autoSizeMaxTextSize="@dimen/_8ssp"
+                android:maxLines="1"
+                android:autoSizeMinTextSize="@dimen/_1ssp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="В том числе растительные"
+                android:textSize="@dimen/_8ssp" />
 
 
             <TextView
@@ -141,7 +164,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="Жиры:"
-        android:textSize="20sp" />
+        android:textSize="@dimen/_20ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_20ssp"
+        android:autoSizeStepGranularity="1sp" />
 
     <TextView
         android:id="@+id/fatsCcalText"
@@ -153,7 +180,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="ккал"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/fatsGramText"
@@ -165,7 +196,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="грамм"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/line2"
@@ -202,7 +237,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="Углеводы:"
-        android:textSize="18sp" />
+        android:textSize="@dimen/_18ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_18ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/carboCcalText"
@@ -214,7 +253,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="ккал"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/carboGramText"
@@ -226,7 +269,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="грамм"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/line3"
@@ -263,7 +310,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="Всего:"
-        android:textSize="18sp" />
+        android:textSize="@dimen/_18ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_18ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/allCcalText"
@@ -275,7 +326,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="ккал"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/allGramText"
@@ -287,7 +342,11 @@
         android:layout_toEndOf="@+id/imageDialog"
         android:fontFamily="@font/noto_sans_bold"
         android:text="грамм"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_16ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_16ssp"
+        android:autoSizeStepGranularity="1sp"/>
             <TextView
                 android:id="@+id/plusSDDP"
                 android:layout_width="wrap_content"
@@ -298,7 +357,11 @@
                 android:layout_toEndOf="@+id/imageDialog"
                 android:fontFamily="@font/noto_sans_bold"
                 android:text="*(+СДДП)"
-                android:textSize="12sp" />
+                android:textSize="@dimen/_12ssp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="@dimen/_1ssp"
+                android:autoSizeMaxTextSize="@dimen/_12ssp"
+                android:autoSizeStepGranularity="1sp"/>
 
     <TextView
         android:id="@+id/line4"
@@ -342,7 +405,11 @@
         android:layout_marginTop="80dp"
         android:fontFamily="@font/noto_sans_bold"
         android:text="ВОО:"
-        android:textSize="12sp" />
+        android:textSize="@dimen/_12ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_12ssp"
+        android:autoSizeStepGranularity="1sp"/>
     <TextView
         android:id="@+id/SDDP"
         android:layout_width="wrap_content"
@@ -350,10 +417,14 @@
         android:layout_below="@+id/line5"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="150dp"
         android:fontFamily="@font/noto_sans_bold"
         android:text="СДДП:"
-        android:textSize="12sp" />
+        android:textSize="@dimen/_12ssp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="@dimen/_1ssp"
+        android:autoSizeMaxTextSize="@dimen/_12ssp"
+        android:autoSizeStepGranularity="1sp"/>
 
         </RelativeLayout>
 

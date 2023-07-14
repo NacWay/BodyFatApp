@@ -1,40 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:id="@+id/dialogShape">
 
-    <TextView
-        android:id="@+id/resDialog"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/noto_sans_bold"
-        android:textAlignment="center"
-        android:text="string"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scrolllauoyt"
+        android:layout_width="wrap_content"
+        android:layout_height="800dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
-    <ImageView
-        android:id="@+id/imageDialog"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:layout_marginEnd="8dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/tablefatfemale" />
+        <TextView
+            android:id="@+id/resDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:fontFamily="@font/noto_sans_bold"
+            android:text="string"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toTopOf="@+id/imageDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textDialog"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:textColor="@color/black"
-        android:fontFamily="@font/noto_sans"
-        android:textSize="10sp"
-        android:text="@string/anatationForBodyFat"
-        />
+        <ImageView
+            android:id="@+id/imageDialog"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_above="@+id/textDialog"
+            android:layout_below="@+id/resDialog"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tablefatfemale"
+            app:layout_constraintBottom_toTopOf="@+id/textDialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resDialog" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/anatationForBodyFat"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDialog" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
