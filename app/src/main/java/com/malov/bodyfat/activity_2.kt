@@ -67,7 +67,7 @@ class activity_2 : AppCompatActivity() {
             commit()
             val anim: Animation =
             AnimationUtils.loadAnimation(this@activity_2, R.anim.openfragment)
-            frameLayout.visibility= View.VISIBLE
+           // frameLayout.visibility= View.VISIBLE
             frameLayout.startAnimation(anim)
             calcBtn.isEnabled = false
         }
