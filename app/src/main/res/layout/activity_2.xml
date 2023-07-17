@@ -10,7 +10,7 @@
     android:layout_alignParentStart="true"
     android:layout_alignParentEnd="true"
     android:layout_alignParentBottom="true"
-    tools:context=".activity_2">
+    tools:context=".Activity_2">
 
 
 
@@ -183,22 +183,69 @@
                 android:layout_marginTop="30dp"
                 android:contentDescription="TODO" />
 
+
             <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="107dp"
-                android:layout_marginTop="200dp"
-                android:layout_marginEnd="210dp"
-                android:text="Button"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/btn4"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:autoSizeMaxTextSize="12sp"
+                android:autoSizeMinTextSize="1sp"
+                android:autoSizePresetSizes="uniform"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="@color/white"
+                android:backgroundTintMode="add"
+                android:elegantTextHeight="true"
+                android:elevation="20dp"
+                android:ellipsize="middle"
+                android:fontFamily="@font/noto_sans_bold"
+                android:maxLines="4"
+                android:minLines="3"
+                android:stateListAnimator="@null"
+                android:text="РАССЧЕТ ИДЕАЛЬНОГО ВЕСА ТЕЛА"
+                android:textAlignment="center"
+                android:textColor="@color/lightpurple"
+                android:textSize="14sp"
+                android:translationZ="10dp"
+                app:cornerRadius="40sp"
+                app:iconTintMode="add"
+                app:layout_constraintEnd_toStartOf="@+id/idealWeightImg"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn3" />
+                app:layout_constraintTop_toBottomOf="@+id/waterimg"
+                app:strokeColor="@color/lightgreen"
+                app:strokeWidth="5sp"
+                tools:targetApi="o" />
+
+            <ImageView
+                android:id="@+id/idealWeightImg"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:contentDescription="TODO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn4"
+                app:layout_constraintTop_toBottomOf="@+id/btn3"
+                app:srcCompat="@drawable/idealweightimg" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn4"
+                android:layout_marginTop="50dp"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
 
 
     <FrameLayout
@@ -213,6 +260,17 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:elevation="50dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/idea" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

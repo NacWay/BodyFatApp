@@ -1,0 +1,317 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:id="@+id/dialogShape"
+    android:scrollbars="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <TextView
+                android:id="@+id/resDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="Ваш иделаьный вес был рассчитан по разным формулам:"
+                android:backgroundTint="@color/lightpurple"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="1sp"
+                android:autoSizeMaxTextSize="16sp"
+                android:autoSizeStepGranularity="1sp"/>
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/resDialog"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaHamphi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Формула Хамви, разработанная в 1964 году:"
+                />
+
+            <TextView
+                android:id="@+id/valueHamphi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaHamphi"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 kg" />
+
+
+
+            <TextView
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/valueHamphi"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaDevin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Доктор Девин вывел свою формулу расчета веса в 1974 году и применял ее для дозировки назначаемых препаратов:"
+                />
+
+            <TextView
+                android:id="@+id/valueDevin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaDevin"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 кg" />
+
+
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/valueDevin"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaMiller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Учитывая недостатки формулы Девина, Миллер в 1983 году улучшил метод расчета идеального веса для мужчин и женщин:"
+                />
+
+            <TextView
+                android:id="@+id/valueMiller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaMiller"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 кg" />
+
+
+            <TextView
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/valueMiller"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaRobinson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line3"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Робинсон улучшил формулу Девина, полученная им формула не совсем точно рассчитывает вес для мужчин и больше подходит для определения идеального веса у женщин:"
+                />
+
+            <TextView
+                android:id="@+id/valueRobinson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaRobinson"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 кg" />
+
+
+            <TextView
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/valueRobinson"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaBroke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line4"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Элементарная формула, которую часто называют формулой Брокка:"
+                />
+
+            <TextView
+                android:id="@+id/valueBroke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaBroke"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 кg" />
+
+
+            <TextView
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/valueBroke"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaBrokeNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line5"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Формула Брокка была предложена достаточно давно и после множественных исследований и анализа статистики миллионов пациентов, ученые её несколько модернизировали:"
+                />
+
+            <TextView
+                android:id="@+id/valueBrokeNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaBrokeNew"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 кg" />
+
+            <TextView
+                android:id="@+id/textBroke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/valueBrokeNew"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Доработанная формула и правда выглядит убедительнее. Особенно для тех, кто страдает от лишнего веса:"
+                />
+
+
+            <TextView
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/textBroke"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <Button
+                android:id="@+id/whyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/line6"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/lightgreen"
+                android:elevation="50dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="Почему это примерные значения?"
+                android:textAlignment="center"
+                android:textSize="@dimen/_10ssp"
+                app:cornerRadius="40dp" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

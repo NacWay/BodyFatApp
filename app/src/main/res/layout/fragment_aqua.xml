@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="550dp"
-    tools:context=".fatPersent"
+    tools:context=".FatPersent"
     android:background="@drawable/corner"
     android:elevation="20dp"
     android:layout_marginLeft="20dp"
@@ -114,8 +114,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/valuetextWeight"
-            app:thumbColor="@color/lightgreen"
-            app:trackColor="@color/lightBlue" />
+            app:thumbColor="@color/lightpurple"
+            app:trackColor="@color/lightgreen" />
 
 
         <Button

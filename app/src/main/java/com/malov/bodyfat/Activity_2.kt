@@ -1,14 +1,11 @@
 package com.malov.bodyfat
 
 import android.content.Context
-import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Vibrator
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -16,7 +13,7 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 
-class activity_2 : AppCompatActivity() {
+class Activity_2 : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,24 +23,29 @@ class activity_2 : AppCompatActivity() {
         val calcBtn1: Button = findViewById(R.id.btn1)
         val calcBtn2: Button = findViewById(R.id.btn2)
         val calcBtn3: Button = findViewById(R.id.btn3)
+        val calcBtn4: Button = findViewById(R.id.btn4)
         val frameLayout: FrameLayout = findViewById(R.id.frame_layout)
         val mainFrame: RelativeLayout = findViewById(R.id.mainFraim)
-        val fatPersent = fatPersent()
-        val cal = cal()
-        val aqua = aqua()
+        val fatPersent = FatPersent()
+        val cal = Cal()
+        val aqua = Aqua()
+        val idealWeight = IdealWeight()
 
         calcBtn1.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, cal, calcBtn3)
+            openCloseFragment(frameLayout, mainFrame, cal, calcBtn3, calcBtn4)
         }
 
         calcBtn2.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, fatPersent, calcBtn3)
+            openCloseFragment(frameLayout, mainFrame, fatPersent, calcBtn3, calcBtn4)
         }
 
         calcBtn3.setOnClickListener{
-            openCloseFragment(frameLayout, mainFrame, aqua, calcBtn3)
+            openCloseFragment(frameLayout, mainFrame, aqua, calcBtn3, calcBtn4)
         }
 
+        calcBtn4.setOnClickListener{
+            openCloseFragment(frameLayout, mainFrame, idealWeight, calcBtn3, calcBtn4)
+        }
 
     }
 
@@ -57,27 +59,30 @@ class activity_2 : AppCompatActivity() {
         frameLayout: FrameLayout,
         mainFrame: RelativeLayout,
         fragment: Fragment,
-        calcBtn: Button
+        calcBtn3: Button,
+        calcBtn4: Button
     ) {
-        val vibe: Vibrator = this@activity_2?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        val vibe: Vibrator = this@Activity_2?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibe.vibrate(20)
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frame_layout, fragment)
             addToBackStack(null)
             commit()
             val anim: Animation =
-            AnimationUtils.loadAnimation(this@activity_2, R.anim.openfragment)
+            AnimationUtils.loadAnimation(this@Activity_2, R.anim.openfragment)
            // frameLayout.visibility= View.VISIBLE
             frameLayout.startAnimation(anim)
-            calcBtn.isEnabled = false
+            calcBtn3.isEnabled = false
+            calcBtn4.isEnabled = false
         }
         mainFrame.setOnClickListener {
             vibe.vibrate(20)
-            calcBtn.isEnabled = true
+            calcBtn3.isEnabled = true
+            calcBtn4.isEnabled = true
             supportFragmentManager.beginTransaction().apply {
                 remove(fragment)
                 val anim1: Animation =
-                    AnimationUtils.loadAnimation(this@activity_2, R.anim.closefragment)
+                    AnimationUtils.loadAnimation(this@Activity_2, R.anim.closefragment)
                 frameLayout.startAnimation(anim1)
                 Handler(Looper.getMainLooper()).postDelayed(        //немного замедляем поток чтобы показать начальную анимацию
                     {

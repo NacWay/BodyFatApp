@@ -14,7 +14,7 @@ import com.google.android.material.slider.Slider
 import java.text.DecimalFormat
 
 
-class fatForMale : Fragment() {
+class FatForMale : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -10,18 +10,15 @@ import android.os.Vibrator
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 
 
-class fatPersent : Fragment() {
+class FatPersent : Fragment() {
 
 
     override fun onCreateView(
@@ -44,8 +41,8 @@ class fatPersent : Fragment() {
         val imgFemale : ImageView = view.findViewById(R.id.imgFemale)
         val imgMale : ImageView = view.findViewById(R.id.imgMale)
 
-        val fat_forFemale = fatForFemale()
-        val fat_forMale =fatForMale()
+        val fat_forFemale = FatForFemale()
+        val fat_forMale =FatForMale()
         setFragment(fat_forFemale)
      //   imgMale.visibility = GONE
 
@@ -86,7 +83,7 @@ class fatPersent : Fragment() {
         view?.startAnimation(anim)
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                startActivity(Intent(view?.context, activity_2::class.java))
+                startActivity(Intent(view?.context, Activity_2::class.java))
                 getActivity()?.overridePendingTransition(R.anim.nullanim, R.anim.nullanim)
             }, 200
         )

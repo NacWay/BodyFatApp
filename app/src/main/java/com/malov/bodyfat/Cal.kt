@@ -12,11 +12,12 @@ import android.view.*
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.*
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.slider.Slider
 
 
-class cal : Fragment() {
+class Cal : Fragment() {
 
 
     override fun onCreateView(
@@ -74,13 +75,13 @@ class cal : Fragment() {
         val radioGroup : RadioGroup = view.findViewById(R.id.radioGroup)
         val radioText : TextView = view.findViewById(R.id.valuetextGroupWork)
 
-        val radioGroupSex : RadioGroup = view.findViewById(R.id.radioGroupSex)
+        val switchOnOff : SwitchCompat = view.findViewById(R.id.switchOnOff)
 
         var old : Int = 40
         var height : Int = 130
         var weight : Int = 60
         var groupWork : Int = 5
-        var sex : Int = 1
+        var sex : Int = 2
 
         fun upDate(){
             old = doSlide(sliderOld, textOld)
@@ -99,10 +100,10 @@ class cal : Fragment() {
                     }
                 }
             }
-            radioGroupSex.clearCheck()
-            radioGroupSex.setOnCheckedChangeListener{ group, checkedId ->
-                group.findViewById<RadioButton>(checkedId)?.apply {
-                    if (text == "ЖЕН") sex = 1 else sex = 2
+            switchOnOff.setOnCheckedChangeListener{ _, cheked ->
+                when{
+                    cheked-> { sex = 2 }
+                    else -> { sex = 1 }
                 }
             }
         }
@@ -248,7 +249,7 @@ class cal : Fragment() {
         view?.startAnimation(anim)
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                startActivity(Intent(view?.context, activity_2::class.java))
+                startActivity(Intent(view?.context, Activity_2::class.java))
                 getActivity()?.overridePendingTransition(R.anim.nullanim, R.anim.nullanim)
             }, 200
         )

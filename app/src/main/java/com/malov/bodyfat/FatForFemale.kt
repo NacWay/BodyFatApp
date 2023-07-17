@@ -20,7 +20,7 @@ import com.google.android.material.slider.Slider
 import java.text.DecimalFormat
 
 
-class fatForFemale : Fragment() {
+class FatForFemale : Fragment() {
 
 
     override fun onCreateView(

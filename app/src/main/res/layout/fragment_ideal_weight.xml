@@ -19,12 +19,9 @@
         app:layout_constraintTop_toBottomOf="@+id/btnClose">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constr_layout"
+            android:id="@+id/frame_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+            android:layout_height="500dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -225,88 +222,6 @@
                 app:trackColor="@color/lightgreen" />
 
 
-            <TextView
-                android:id="@+id/textGroupWork"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="sans-serif-black"
-                android:text="Выбирите свою группу труда"
-                android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekWeight" />
-
-            <TextView
-                android:id="@+id/valuetextGroupWork"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:fontFamily="sans-serif-black"
-                android:text="I группа"
-                android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textGroupWork" />
-
-            <ImageButton
-                android:id="@+id/noticeGroupWork"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="0dp"
-                android:background="@color/white"
-                android:src="@drawable/noticeimage"
-                app:layout_constraintStart_toEndOf="@+id/textGroupWork"
-                app:layout_constraintTop_toBottomOf="@+id/seekWeight" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/valuetextGroupWork">
-
-                <RadioButton
-                    android:id="@+id/radioBtn1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="I" />
-
-                <RadioButton
-                    android:id="@+id/radioBtn2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="II" />
-
-                <RadioButton
-                    android:id="@+id/radioBtn3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="III" />
-
-                <RadioButton
-                    android:id="@+id/radioBtn4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:text="IV" />
-
-                <RadioButton
-                    android:id="@+id/radioBtn5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:text="V" />
-            </RadioGroup>
-
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
@@ -317,12 +232,12 @@
                 android:elevation="20dp"
                 android:text="Рассчитать"
                 android:textColor="@color/white"
+                android:backgroundTint="@color/lightBlue"
                 app:cornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                app:layout_constraintTop_toBottomOf="@+id/seekWeight" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

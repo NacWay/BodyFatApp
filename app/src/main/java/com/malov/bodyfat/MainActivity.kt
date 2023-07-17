@@ -72,8 +72,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
-
         enterName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -97,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     fun goSecondActvt(){
         Handler(Looper.getMainLooper()).postDelayed(        //немного замедляем поток чтобы показать начальную анимацию
             {
-                startActivity(Intent(applicationContext, activity_2::class.java))
+                startActivity(Intent(applicationContext, Activity_2::class.java))
 
                 overridePendingTransition(
                     R.anim.change_acrivity2,
