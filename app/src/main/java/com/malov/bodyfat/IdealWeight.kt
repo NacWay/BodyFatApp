@@ -1,5 +1,6 @@
 package com.malov.bodyfat
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -21,6 +22,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.AlertDialogLayout
 import androidx.appcompat.widget.SwitchCompat
 import com.google.android.material.slider.Slider
+import java.text.DecimalFormat
 
 
 class IdealWeight : Fragment() {
@@ -34,6 +36,7 @@ class IdealWeight : Fragment() {
         return inflater.inflate(R.layout.fragment_ideal_weight, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -83,17 +86,65 @@ class IdealWeight : Fragment() {
 
         upDate()
 
+
+
         button.setOnClickListener{
             val  builder = AlertDialog.Builder(view.context)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.dialogidialweight, view?.findViewById(R.id.dialogShape))
+            val dialogLayout = inflater.inflate(R.layout.dialogidialweight,
+                view.findViewById(R.id.dialogShape)
+            )
             val btnWhyText : Button = dialogLayout.findViewById(R.id.whyText)
+            val hamphi : TextView = dialogLayout.findViewById(R.id.valueHamphi)
+            val devin : TextView = dialogLayout.findViewById(R.id.valueDevin)
+            val miller : TextView = dialogLayout.findViewById(R.id.valueMiller)
+            val robinson : TextView = dialogLayout.findViewById(R.id.valueRobinson)
+            val broke : TextView = dialogLayout.findViewById(R.id.valueBroke)
+            val brokenew : TextView = dialogLayout.findViewById(R.id.valueBrokeNew)
+            val kuper : TextView = dialogLayout.findViewById(R.id.valueKuper)
+            upDate()
+            //По формуле Хампфи
+            val resH : Double
+            if (sex==0) resH = 48 + 2.7 * (height/2.54 - 60)
+            else resH = 45.5 + 2.2 * (height/2.54 - 60)
+            hamphi.text = "${DecimalFormat("#0.00").format(resH)} кг"
+            //По формуле Девина
+            val resD : Double
+            if (sex==0) resD = 50 + 2.3 * (height/2.54 - 60)
+            else resD = 45.5 + 2.3 * (height/2.54 - 60)
+            devin.text = "${DecimalFormat("#0.00").format(resD)} кг"
+            //По формуле Миллера
+            val resM : Double
+            if (sex==0) resM = 56.2 + 1.41 * (height/2.54 - 60)
+            else resM = 53.1 + 1.36 * (height/2.54 - 60)
+            miller.text = "${DecimalFormat("#0.00").format(resM)} кг"
+            //По формуле Робинсона
+            val resR : Double
+            if (sex==0) resR = 52 + 1.9 * (height/2.54 - 60)
+            else resR = 49 + 1.7 * (height/2.54 - 60)
+            robinson.text = "${DecimalFormat("#0.00").format(resR)} кг"
+            //По формуле Купера
+            val resK : Double
+            if (sex==0) resK = (height * 4.0 / 2.54 - 128) * 0.453
+            else resK = (height * 3.5 / 2.54 - 108) * 0.453
+            kuper.text = "${DecimalFormat("#0.00").format(resK)} кг"
+            //По формуле Брока
+            val resB : Int
+            if (sex==0) resB = height - 100
+            else resB = height - 110
+            broke.text = "${DecimalFormat("#0.00").format(resB)} кг"
+            //По формуле Брокера новой
+            val resBn : Double
+            if (sex==0) resBn = (height - 100) * 1.15
+            else resBn = (height - 110) * 1.15
+            brokenew.text = "${DecimalFormat("#0.00").format(resBn)} кг"
+
+
             builder.setView(dialogLayout).show()
             btnWhyText.setOnClickListener{
                 val builder1 = AlertDialog.Builder(dialogLayout.context)
                 builder1.setMessage(R.string.endIdealWeight).show()
             }
-
         }
 
     }

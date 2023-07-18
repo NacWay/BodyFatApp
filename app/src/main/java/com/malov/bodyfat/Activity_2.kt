@@ -1,5 +1,6 @@
 package com.malov.bodyfat
 
+import android.app.AlertDialog.Builder
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +11,9 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.ImageButton
 import android.widget.RelativeLayout
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 
 class Activity_2 : AppCompatActivity() {
@@ -30,6 +33,15 @@ class Activity_2 : AppCompatActivity() {
         val cal = Cal()
         val aqua = Aqua()
         val idealWeight = IdealWeight()
+        val ideaBtn : ImageButton = findViewById(R.id.ideaBtn)
+        val animup: Animation = AnimationUtils.loadAnimation(this@Activity_2, R.anim.ideaup)
+        ideaBtn.startAnimation(animup)
+
+        ideaBtn.setOnClickListener{
+            val build  = AlertDialog.Builder(this@Activity_2)
+            val dialogLayout = layoutInflater.inflate(R.layout.dialogidea, findViewById(R.id.dialogShape))
+            build.setView(dialogLayout).show()
+        }
 
         calcBtn1.setOnClickListener {
             openCloseFragment(frameLayout, mainFrame, cal, calcBtn3, calcBtn4)

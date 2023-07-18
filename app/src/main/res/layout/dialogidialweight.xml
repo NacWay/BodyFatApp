@@ -190,10 +190,47 @@
 
 
             <TextView
-                android:id="@+id/line4"
+                android:id="@+id/line35"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_below="@+id/valueRobinson"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/textFormulaKuper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line35"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/noto_sans_italic"
+                android:textSize="12sp"
+                android:text="Расчет идеального веса по формуле Купера. Является более точной для современных людей:"
+                />
+
+            <TextView
+                android:id="@+id/valueKuper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFormulaKuper"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textAlignment="center"
+                android:text="50 кg" />
+
+            <TextView
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/valueKuper"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"

@@ -8,10 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lightpurple">#e4c1f9</color>
+    <color name="darkpurple">#a87ec2</color>
     <color name="lightBlue">#abdaf8</color>
     <color name="lightgreen">#d0eee2</color>
     <color name="mancolor">#a8def8</color>
     <color name="womanColor">#f69fcc</color>
     <color name="darkGrey">#a3a3a3</color>
     <color name="lighntYellow">#ffdcb1</color>
+    <color name="coolBlue">#7986CB</color>
 </resources>
