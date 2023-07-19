@@ -43,10 +43,12 @@ class IdealWeight : Fragment() {
         val btnCloseFr : Button = view.findViewById(R.id.btnClose)
 
         btnCloseFr.setOnTouchListener(object : OnSwipeTouchListener(view.context){
+            @SuppressLint("ClickableViewAccessibility")
             override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
                 return super.onTouch(view, motionEvent)
                 doCloseFragment()
             }
+            @SuppressLint("ClickableViewAccessibility")
             override fun onSwipeDown() {
                 super.onSwipeDown()
                 doCloseFragment()

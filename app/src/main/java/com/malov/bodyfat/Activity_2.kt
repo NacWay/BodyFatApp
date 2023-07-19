@@ -64,7 +64,9 @@ class Activity_2 : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         val btn3 = findViewById<Button>(R.id.btn3)
+        val btn4 = findViewById<Button>(R.id.btn4)
         btn3.isEnabled=true
+        btn4.isEnabled=true
     }
 
     fun openCloseFragment(
