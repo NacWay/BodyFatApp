@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -38,13 +39,16 @@ android {
 dependencies {
     implementation 'com.github.bluejamesbond:textjustify-android:2.1.6'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
-    implementation 'com.google.android.material:material:1.2.0-alpha06'
-    implementation 'androidx.core:core-ktx:1.07.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material'
+    implementation 'androidx.core:core-ktx'
+    implementation 'androidx.appcompat:appcompat'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview'
+    implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.1'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

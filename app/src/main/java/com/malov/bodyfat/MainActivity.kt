@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val text: TextView = findViewById(R.id.textView)
         text.visibility = GONE
 

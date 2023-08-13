@@ -1,6 +1,5 @@
 package com.malov.bodyfat
 
-import android.app.AlertDialog.Builder
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +14,8 @@ import android.widget.ImageButton
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class Activity_2 : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class Activity_2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_2)
+        FirebaseApp.initializeApp(this@Activity_2)
 
         val calcBtn1: Button = findViewById(R.id.btn1)
         val calcBtn2: Button = findViewById(R.id.btn2)

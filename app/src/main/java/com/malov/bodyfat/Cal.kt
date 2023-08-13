@@ -83,6 +83,7 @@ class Cal : Fragment() {
         var groupWork : Int = 5
         var sex : Int = 2
 
+
         fun upDate(){
             old = doSlide(sliderOld, textOld)
             height = doSlide(sliderHeight, textHeight)
