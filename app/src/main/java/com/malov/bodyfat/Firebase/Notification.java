@@ -29,9 +29,9 @@ public class Notification  extends FirebaseMessagingService {
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.tablefatfemale)
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.tablefatfemale))
-                .setContentTitle(this.getString(R.string.app_name))
+                .setSmallIcon(R.drawable.bg)
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.bg))
+                .setContentTitle("BodyFat: калькулятор здорового тела")
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri);
