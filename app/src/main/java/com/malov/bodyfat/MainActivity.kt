@@ -46,9 +46,6 @@ class MainActivity : AppCompatActivity() {
 
         database = Firebase.database.reference
 
-
-
-
         askNotificationPermission()
 
         val text: TextView = findViewById(R.id.textView)
@@ -83,7 +80,6 @@ class MainActivity : AppCompatActivity() {
                     goSecondActvt()
                 }
             }
-
             override fun onAnimationCancel(animation: Animator) {
                 TODO("Not yet implemented")
             }

@@ -16,32 +16,38 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 
 class Activity_2 : AppCompatActivity() {
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_2)
-        FirebaseApp.initializeApp(this@Activity_2)
+        firebaseAnalytics = Firebase.analytics
 
         val calcBtn1: Button = findViewById(R.id.btn1)
         val calcBtn2: Button = findViewById(R.id.btn2)
         val calcBtn3: Button = findViewById(R.id.btn3)
         val calcBtn4: Button = findViewById(R.id.btn4)
+        val calcBtn5: Button = findViewById(R.id.btn5)
         val frameLayout: FrameLayout = findViewById(R.id.frame_layout)
         val mainFrame: RelativeLayout = findViewById(R.id.mainFraim)
         val fatPersent = FatPersent()
         val cal = Cal()
         val aqua = Aqua()
         val idealWeight = IdealWeight()
-        val ideaBtn : ImageButton = findViewById(R.id.ideaBtn)
+        val burningCal = burningcalories()
+        val ideaBtn: ImageButton = findViewById(R.id.ideaBtn)
         val animup: Animation = AnimationUtils.loadAnimation(this@Activity_2, R.anim.ideaup)
         ideaBtn.startAnimation(animup)
 
-        ideaBtn.setOnClickListener{
-            val build  = AlertDialog.Builder(this@Activity_2)
-            val dialogLayout = layoutInflater.inflate(R.layout.dialogidea, findViewById(R.id.dialogShape))
+        ideaBtn.setOnClickListener {
+            val build = AlertDialog.Builder(this@Activity_2)
+            val dialogLayout =
+                layoutInflater.inflate(R.layout.dialogidea, findViewById(R.id.dialogShape))
             build.setView(dialogLayout).show()
         }
 
@@ -53,12 +59,16 @@ class Activity_2 : AppCompatActivity() {
             openCloseFragment(frameLayout, mainFrame, fatPersent, calcBtn3, calcBtn4)
         }
 
-        calcBtn3.setOnClickListener{
+        calcBtn3.setOnClickListener {
             openCloseFragment(frameLayout, mainFrame, aqua, calcBtn3, calcBtn4)
         }
 
-        calcBtn4.setOnClickListener{
+        calcBtn4.setOnClickListener {
             openCloseFragment(frameLayout, mainFrame, idealWeight, calcBtn3, calcBtn4)
+        }
+
+        calcBtn5.setOnClickListener {
+            openCloseFragment(frameLayout, mainFrame, burningCal, calcBtn3, calcBtn4)
         }
 
     }
@@ -67,8 +77,10 @@ class Activity_2 : AppCompatActivity() {
         super.onBackPressed()
         val btn3 = findViewById<Button>(R.id.btn3)
         val btn4 = findViewById<Button>(R.id.btn4)
-        btn3.isEnabled=true
-        btn4.isEnabled=true
+        val btn5 = findViewById<Button>(R.id.btn5)
+        btn3.isEnabled = true
+        btn4.isEnabled = true
+        btn5.isEnabled = true
     }
 
     fun openCloseFragment(
@@ -85,8 +97,8 @@ class Activity_2 : AppCompatActivity() {
             addToBackStack(null)
             commit()
             val anim: Animation =
-            AnimationUtils.loadAnimation(this@Activity_2, R.anim.openfragment)
-           // frameLayout.visibility= View.VISIBLE
+                AnimationUtils.loadAnimation(this@Activity_2, R.anim.openfragment)
+            // frameLayout.visibility= View.VISIBLE
             frameLayout.startAnimation(anim)
             calcBtn3.isEnabled = false
             calcBtn4.isEnabled = false
