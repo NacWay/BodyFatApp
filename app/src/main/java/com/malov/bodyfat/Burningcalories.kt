@@ -18,8 +18,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import com.google.android.material.slider.Slider
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 
-class burningcalories : Fragment() {
+class Burningcalories : Fragment() {
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     var time: Int = 150
     var weight: Int = 80
     var sex: Int = 0  // 1-female, 0- male
@@ -35,6 +40,12 @@ class burningcalories : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, "Burningcalories")
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "Burningcalories")
+        }
+
 
         val btnCloseFr: Button = view.findViewById(R.id.btnClose)
 
@@ -107,7 +118,7 @@ class burningcalories : Fragment() {
             val dance: TextView = dialogLayout.findViewById(R.id.dance)
             val struggle: TextView = dialogLayout.findViewById(R.id.struggle)
             val bouling: TextView = dialogLayout.findViewById(R.id.bouling)
-            var anhletic: TextView = dialogLayout.findViewById(R.id.atlenic)
+            val anhletic: TextView = dialogLayout.findViewById(R.id.atlenic)
             val football: TextView = dialogLayout.findViewById(R.id.football)
             val boating: TextView = dialogLayout.findViewById(R.id.boating)
             val shoping: TextView = dialogLayout.findViewById(R.id.shoping)

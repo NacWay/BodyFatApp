@@ -14,9 +14,9 @@ import android.widget.ImageButton
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.ktx.Firebase
 
 class Activity_2 : AppCompatActivity() {
@@ -27,6 +27,10 @@ class Activity_2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_2)
         firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, "activity_2")
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "Activity_2")
+        }
 
         val calcBtn1: Button = findViewById(R.id.btn1)
         val calcBtn2: Button = findViewById(R.id.btn2)
@@ -39,7 +43,7 @@ class Activity_2 : AppCompatActivity() {
         val cal = Cal()
         val aqua = Aqua()
         val idealWeight = IdealWeight()
-        val burningCal = burningcalories()
+        val burningCal = Burningcalories()
         val ideaBtn: ImageButton = findViewById(R.id.ideaBtn)
         val animup: Animation = AnimationUtils.loadAnimation(this@Activity_2, R.anim.ideaup)
         ideaBtn.startAnimation(animup)
@@ -52,23 +56,23 @@ class Activity_2 : AppCompatActivity() {
         }
 
         calcBtn1.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, cal, calcBtn3, calcBtn4)
+            openCloseFragment(frameLayout, mainFrame, cal, calcBtn3, calcBtn4, calcBtn5)
         }
 
         calcBtn2.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, fatPersent, calcBtn3, calcBtn4)
+            openCloseFragment(frameLayout, mainFrame, fatPersent, calcBtn3, calcBtn4, calcBtn5)
         }
 
         calcBtn3.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, aqua, calcBtn3, calcBtn4)
+            openCloseFragment(frameLayout, mainFrame, aqua, calcBtn3, calcBtn4, calcBtn5)
         }
 
         calcBtn4.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, idealWeight, calcBtn3, calcBtn4)
+            openCloseFragment(frameLayout, mainFrame, idealWeight, calcBtn3, calcBtn4, calcBtn5)
         }
 
         calcBtn5.setOnClickListener {
-            openCloseFragment(frameLayout, mainFrame, burningCal, calcBtn3, calcBtn4)
+            openCloseFragment(frameLayout, mainFrame, burningCal, calcBtn3, calcBtn4, calcBtn5)
         }
 
     }
@@ -88,7 +92,8 @@ class Activity_2 : AppCompatActivity() {
         mainFrame: RelativeLayout,
         fragment: Fragment,
         calcBtn3: Button,
-        calcBtn4: Button
+        calcBtn4: Button,
+        calcBtn5: Button
     ) {
         val vibe: Vibrator = this@Activity_2?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibe.vibrate(20)
@@ -102,11 +107,13 @@ class Activity_2 : AppCompatActivity() {
             frameLayout.startAnimation(anim)
             calcBtn3.isEnabled = false
             calcBtn4.isEnabled = false
+            calcBtn5.isEnabled = false
         }
         mainFrame.setOnClickListener {
             vibe.vibrate(20)
             calcBtn3.isEnabled = true
             calcBtn4.isEnabled = true
+            calcBtn5.isEnabled = true
             supportFragmentManager.beginTransaction().apply {
                 remove(fragment)
                 val anim1: Animation =

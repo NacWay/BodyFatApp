@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="550dp"
-    tools:context=".burningcalories"
+    tools:context=".Burningcalories"
     android:background="@drawable/corner"
     android:elevation="20dp"
     android:layout_marginLeft="20dp"
@@ -112,8 +112,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/valuetextTime"
-                app:thumbColor="@color/purple_200"
-                app:trackColor="@color/cardview_shadow_start_color" />
+                app:thumbColor="@color/lightBlue"
+                app:trackColor="@color/lightpurple" />
 
             <TextView
                 android:id="@+id/textWeight"
@@ -165,8 +165,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/valuetextWeight"
-                app:thumbColor="@color/purple_200"
-                app:trackColor="@color/cardview_shadow_start_color" />
+                app:thumbColor="@color/lightBlue"
+                app:trackColor="@color/lightpurple" />
 
 
             <Button

@@ -17,10 +17,15 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.google.android.material.slider.Slider
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import java.text.DecimalFormat
 
 
 class FatForFemale : Fragment() {
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
 
     override fun onCreateView(
@@ -33,6 +38,11 @@ class FatForFemale : Fragment() {
     @SuppressLint("MissingInflatedId")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, "FatForFemale")
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "FatForFemale")
+        }
 
         val inflater = layoutInflater
         val layout = inflater.inflate(R.layout.toast, view?.findViewById(R.id.toastShape))

@@ -22,10 +22,15 @@ import android.widget.TextView
 import androidx.appcompat.widget.AlertDialogLayout
 import androidx.appcompat.widget.SwitchCompat
 import com.google.android.material.slider.Slider
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import java.text.DecimalFormat
 
 
 class IdealWeight : Fragment() {
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
 
     override fun onCreateView(
@@ -39,6 +44,11 @@ class IdealWeight : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        firebaseAnalytics= Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, "IdealWeight")
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "IdealWeight")
+        }
 
         val btnCloseFr : Button = view.findViewById(R.id.btnClose)
 

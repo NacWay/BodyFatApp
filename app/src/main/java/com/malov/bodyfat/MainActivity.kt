@@ -8,8 +8,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.net.NetworkInfo
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -24,12 +22,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //FirebaseApp.initializeApp(this@MainActivity)
         firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+                param(FirebaseAnalytics.Param.SCREEN_NAME, "MainActivity")
+                param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
+            }
+
 
         database = Firebase.database.reference
 
@@ -106,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                         database.push().setValue("${prefs.getString("name", "12")}")
                         getDataFromDb()
                     } else {
-                        Toast.makeText(this@MainActivity, "No Internet connection", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this@MainActivity, "No Internet connection", Toast.LENGTH_LONG).show()
                     }
                     goSecondActvt()
                 }
